@@ -1,0 +1,125 @@
+{
+  "name": "napas247-qr",
+  "version": "0.1.0",
+  "description": "Tạo mã QR chuyển khoản NAPAS 247 / VietQR (chuẩn EMVCo) và vẽ ảnh bằng Canvas trên trình duyệt, Node.js và React.",
+  "keywords": [
+    "napas",
+    "napas247",
+    "vietqr",
+    "emvco",
+    "qr",
+    "qrcode",
+    "bank-transfer",
+    "vietnam",
+    "canvas"
+  ],
+  "license": "MIT",
+  "author": "huyvd <namdinhpro96@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HuyVuDuc/napas247-qr.git"
+  },
+  "homepage": "https://github.com/HuyVuDuc/napas247-qr#readme",
+  "bugs": {
+    "url": "https://github.com/HuyVuDuc/napas247-qr/issues"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./browser": {
+      "import": {
+        "types": "./dist/browser.d.ts",
+        "default": "./dist/browser.js"
+      },
+      "require": {
+        "types": "./dist/browser.d.cts",
+        "default": "./dist/browser.cjs"
+      }
+    },
+    "./node": {
+      "import": {
+        "types": "./dist/node.d.ts",
+        "default": "./dist/node.js"
+      },
+      "require": {
+        "types": "./dist/node.d.cts",
+        "default": "./dist/node.cjs"
+      }
+    },
+    "./react": {
+      "import": {
+        "types": "./dist/react.d.ts",
+        "default": "./dist/react.js"
+      },
+      "require": {
+        "types": "./dist/react.d.cts",
+        "default": "./dist/react.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "browser",
+    "node",
+    "react",
+    "docs",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "samples": "tsx examples/render-samples.ts",
+    "prepublishOnly": "npm run typecheck && npm run test && npm run build"
+  },
+  "dependencies": {
+    "qrcode-generator": "^2.0.4"
+  },
+  "peerDependencies": {
+    "@napi-rs/canvas": ">=0.1.50",
+    "react": ">=16.8.0"
+  },
+  "peerDependenciesMeta": {
+    "@napi-rs/canvas": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@napi-rs/canvas": "^1.1.0",
+    "@types/node": "^26.6.6",
+    "@types/react": "^18.3.31",
+    "jsqr": "^1.4.0",
+    "react": "^18.3.1",
+    "tsup": "^8.5.1",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.7"
+  }
+}

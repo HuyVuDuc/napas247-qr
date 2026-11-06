@@ -1,0 +1,5 @@
+{
+  "main": "../dist/browser.cjs",
+  "module": "../dist/browser.js",
+  "types": "../dist/browser.d.ts"
+}
